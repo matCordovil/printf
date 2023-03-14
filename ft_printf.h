@@ -7,12 +7,12 @@
 # include <stdio.h>
 # include <string.h>
 
-int ft_printf(const char *formspec, ...);
 int ft_print_c(char c);
-int ft_print_di(int n);
-int ft_print_p(unsigned long long p);
 int ft_print_s(char *s);
+//int ft_print_p(void); --*check this one*--
+int ft_print_di(int n);
 int ft_print_u(unsigned int n);
-int ft_print_xX(unsigned int n, const char xX);
+int ft_print_xX(unsigned int n, char formspec, int l);
+int ft_printf(const char *formspec, ...);
 
 #endif

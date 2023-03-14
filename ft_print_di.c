@@ -1,45 +1,44 @@
 #include "ft_printf.h"
 
-int	numlen(int n)
+static int	numlen(int n)
 {
-	int	len;
+	size_t	l;
 
-	len = 0;
+	l = 0;
 	if (n <= 0)
-		len++;
+		l++;
 	while (n)
 	{
-		len++;
+		l++;
 		n /= 10;
 	}
-	return (len);
+	return (l);
 }
 
-int	makepos(int n)
+static int	makepos(int n)
 {
 	if (n < 0)
 		return (-n);
 	return (n);
 }
 
-char	*ft_itoa(int n)
+static char	*ft_itoa(int n)
 {
-	int		len;
+	size_t		l;
 	char	*s;
 
-	len = numlen(n);
-	s = malloc(sizeof(char) * (len + 1));
+	l = numlen(n);
+	s = (char *)malloc(sizeof(char) * (l + 1));
 	if (!s)
 		return (NULL);
-	s[len] = '\0';
+	s[l] = '\0';
 	if (n < 0)
 		s[0] = '-';
 	if (n == 0)
 		s[0] = '0';
 	while (n)
 	{
-		len--;
-		s[len] = makepos(n % 10) + '0';
+		s[--l] = makepos(n % 10) + '0';
 		n /= 10;
 	}
 	return (s);
