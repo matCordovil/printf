@@ -1,30 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_s.c                                       :+:      :+:    :+:   */
+/*   ft_print_xX.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: made-alm <made-alm@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/03/14 19:55:00 by made-alm          #+#    #+#             */
-/*   Updated: 2023/03/14 19:55:02 by made-alm         ###   ########.fr       */
+/*   Created: 2023/03/14 19:55:20 by made-alm          #+#    #+#             */
+/*   Updated: 2023/03/14 19:55:22 by made-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-static int	ft_strlen(char *s)
+int	ft_print_xx(unsigned long long n, char formspec, int l)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
-}
-
-int	ft_print_s(char *s)
-{
-	if (!s)
-		return (write(1, "NULL", 4));
-	return (write(1, s, ft_strlen(s)));
+	if (n >= 16)
+	{
+		l = ft_print_xx(n / 16, formspec, l);
+		l = ft_print_xx(n % 16, formspec, l);
+	}
+	else
+	{
+		if (n < 10)
+			ft_print_c(n + '0');
+		else
+		{
+			if (formspec == 'x')
+				ft_print_c(n - 10 + 'a');
+			else
+				ft_print_c(n - 10 + 'A');
+		}
+		l++;
+	}
+	return (l);
 }

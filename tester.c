@@ -81,7 +81,7 @@ int ft_print_di(int n) //done
     return (l);
 }
 
-/*static int	unslen(unsigned int n) //done
+/*static int	unslen(unsigned int n)
 {
 	size_t	l;
 
@@ -96,7 +96,7 @@ int ft_print_di(int n) //done
 	return (l);
 }
 
-static char	*ft_utoa(unsigned int n) //done
+static char	*ft_utoa(unsigned int n)
 {
 	size_t		l;
 	char	*s;
@@ -114,6 +114,17 @@ static char	*ft_utoa(unsigned int n) //done
 		n /= 10;
 	}
 	return (s);
+}
+
+int ft_print_u(unsigned int n)
+{
+    char    *s;
+    int l;
+
+    s = ft_utoa(n);
+    l = ft_print_s(s);
+    free(s);
+    return (l);
 }*/
 
 int ft_print_u(unsigned int n, int l)//done
