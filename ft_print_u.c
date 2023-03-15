@@ -6,13 +6,13 @@
 /*   By: made-alm <made-alm@student.42porto.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 19:55:14 by made-alm          #+#    #+#             */
-/*   Updated: 2023/03/14 19:55:16 by made-alm         ###   ########.fr       */
+/*   Updated: 2023/03/15 21:47:57 by made-alm         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_print_u(unsigned long long n, int l)
+int	ft_print_u(unsigned int n, int l)
 {
 	if (n >= 10)
 	{

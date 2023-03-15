@@ -23,7 +23,7 @@ static int	ft_printargms(va_list argms, const char formspec)
 	else if (formspec == 'd' || formspec == 'i')
 		return (ft_print_di(va_arg(argms, int)));
 	else if (formspec == 'u')
-		return (ft_print_u(va_arg(argms, unsigned long long), 0));
+		return (ft_print_u(va_arg(argms, unsigned int), 0));
 	else if (formspec == 'x' || formspec == 'X')
 		return (ft_print_xx(va_arg(argms, unsigned int), formspec, 0));
 	else if (formspec == '%')
